@@ -19,6 +19,7 @@ class CocktailsController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_cocktail
     @cocktail = Cocktail.find(params[:id])
@@ -26,7 +27,6 @@ class CocktailsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
-
 end
